@@ -42,6 +42,16 @@ body {
   text-align: center;
 }
 
+.container3 {
+  background-image: url(s.jpg);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 10px 5px 5px dimgray;
+  margin-right: 7.8%;
+  margin-left: 7.8%;
+  text-align: center;
+}
+
 .footer {
 	text-align: center;
 }
