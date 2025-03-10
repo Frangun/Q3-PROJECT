@@ -22,6 +22,10 @@ body {
   box-shadow: 10px 5px 5px dimgray; 
 }
 
+.table {
+  border-radius: 8px;
+}
+
 .container1 {
   background-image: url(s.jpg);
   padding: 10px;
