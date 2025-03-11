@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- SETUP BOOTSTAP: link to Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+	<!-- link to JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<title>Etoile Express</title>
+</head>
+<body>
+	<!-- HEADER -->
+	<div class="header">
+		<h1>Etoile Express</h1>
+		<p><em>High-tech, French-inspired, Advanced</em></p>
+	</div>
+	<div>
+
+	<!-- Navigation Bar -->	
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+    <div class="container-fluid">
+
+    	<!-- Logo -->
+      <a class="navbar-brand" href="javascript:void(0)">
+      	<img src="o1.png" alt="logo" style="width: 40px;" class="rounded-pill">
+        <span style="color: #505E95;">Etoile Express</span>
+      </a>
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav justify-content-center flex-grow-1">
+
+        	<!-- Home -->
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <!-- Schedule -->
+          <li class="nav-item">
+            <a class="nav-link" href="#sched">Train Schedule</a>
+          </li>
+
+          <!-- Feedback -->
+          <li class="nav-item">
+            <a class="nav-link" href="#Feedback">Feedback</a>
+          </li>
+
+          <!-- Help -->
+          <li class="nav-item">
+            <a class="nav-link" href="#help">Help</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn btn-dark" type="button">Search</button>
+        </form>
+    </div>
+</div>
+</nav>
+</div>
+
+	<!-- TRAIN MAP -->
+	<div class="container mt-5">
+		<h3>Train Map</h3>
+		<img src="lrt3.png" class="img-fluid">
+	</div>
+
+	<!-- TRAIN SCHEDULE -->
+	<div class="container mt-5" id="sched">
+		<h3> North Avenue to Tafe Avenue Train Schedule: </h3>
+		<table class="table">
+			<thead> 
+				<tr>
+					<th> Timetable: </th>
+					<th> North Avenue Station: </th>
+					<th> Taft Avenue Station: </th>
+				</tr>
+			</thead>
+
+			<thead>
+				<tr>
+					<th> Weekdays </th>
+						<td> First to Last Train:
+							4:36 AM- 9:30 PM 
+						</td>
+
+						<td> First to Last Train:
+							5:18 AM - 10:11 PM
+						</td>
+					</tbody>
+				</tr>
+			</thead>
+
+			<thead>
+				<tr>
+					<th> Saturdays </th>
+						<td> First to Last Train:
+							4:37 AM - 9:30 PM 
+						</td>
+
+						<td> First to Last Train:
+							5:18 AM - 10:08 PM
+						</td>
+				</tr>
+			</thead>
+
+			<thead>
+				<tr>
+				 <th> Sundays/Holidays </th>
+					 <td> First to Last Train:
+					 	 4:38 AM - 9:30 PM 
+					 </td>
+
+					 <td> First to Last Train:
+						 5:19 AM - 10:09 PM
+					 </td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+	<!-- FARE GUIDE: JS -->
+	<div class="container mt-5">
+		<!-- ONTOGGLE EVENT -->
+		<hr>
+	<details open>
+		<summary><b><h3>Prepare your SG Ticket</h3></b></summary>
+		<hr>
+	
+	<!-- DROPDOWN LIST -->
+	<form>
+
+  	<!-- SEAT OPTIONS: Type -->
+  	<label class="mt-5"><em>Origin</em></label>
+  	<select class="form-select" onchange="updatePrice()" id="origin">
+    			<option>North Ave</option>
+				<option>Quezon Ave</option>
+				<option>Kamuning</option>
+				<option>Araneta Center-Cubao</option>
+				<option>Santolan-Annapolis</option>
+				<option>Ortigas</option>
+				<option>Shaw Blvd.</option>
+				<option>Boni</option>
+				<option>Guadalupe</option>
+				<option>Buendia</option>
+				<option>Ayala</option>
+				<option>Magallanes</option>
+				<option>Taft Ave</option>
+  	</select>
+
+
+
+  	<!-- SEAT OPTIONS: Class -->
+  	<label class="mt-5"><em>Destination</em></label>
+  	<select class="form-select" onchange="updatePrice()" id="destination">
+    			<option>North Ave</option>
+				<option>Quezon Ave</option>
+				<option>Kamuning</option>
+				<option>Araneta Center-Cubao</option>
+				<option>Santolan-Annapolis</option>
+				<option>Ortigas</option>
+				<option>Shaw Blvd</option>
+				<option>Boni</option>
+				<option>Guadalupe</option>
+				<option>Buendia</option>
+				<option>Ayala</option>
+				<option>Magallanes</option>
+				<option>Taft Ave</option>
+  	</select>
+
+  		<!-- This code is derived from my QUIZ2 -->
+
+		<script type="text/javascript">
+
+                	function showAlert(price) {
+			            alert("Ticket Price: " + price + " pesos");
+			        }
+
+                	function updatePrice() {
+					    var origin = document.getElementById("origin").value;
+					    var destination = document.getElementById("destination").value;
+					    var price = 0;
+
+					    // NORTH
+
+					    if (origin === "North Ave") price = 0;
+					    else if (origin === "Quezon Ave") price = 0;
+					    else if (origin === "Kamuning") price = 0;
+					    else if (origin === "Araneta Center-Cubao") price = 0;
+					    else if (origin === "Santolan-Annapolis") price = 0;
+					    else if (origin === "Ortigas") price = 0;
+					    else if (origin === "Shaw Blvd") price = 0;
+					    else if (origin === "Boni") price = 0;
+					    else if (origin === "Guadalupe") price = 0;
+					    else if (origin === "Buendia") price = 0;
+					    else if (origin === "Ayala") price = 0;
+					    else if (origin === "Magallanes") price = 0;
+					    else if (origin === "Taft Ave") price = 0;
+					    else {
+					        document.getElementById("message").innerHTML = "Please select origin";
+					        return;
+					    }
+
+					    if (destination === "North Ave") price += 0;
+					    else if (destination === "Quezon Ave") price += 13;
+					    else if (destination === "Kamuning") price += 13;
+					    else if (destination === "Araneta Center-Cubao") price += 13;
+					    else if (destination === "Santolan-Annapolis") price += 15;
+					    else if (destination === "Ortigas") price += 15;
+					    else if (destination === "Shaw Blvd") price += 15;
+					    else if (destination === "Boni") price += 15;
+					    else if (destination === "Guadalupe") price += 28;
+					    else if (destination === "Buendia") price += 28;
+					    else if (destination === "Ayala") price += 28;
+					    else if (destination === "Magallanes") price += 28;
+					    else if (destination === "Taft Ave") price += 28;
+					    else {
+					        document.getElementById("message").innerHTML = "Please select a destination.";
+					        return;
+					    }
+
+
+					    document.getElementById("message").innerHTML = "Ticket Price: " + price + " pesos"; return price;
+					}
+
+                </script>
+
+    <button class="btn btn-dark mt-5" onclick="">Discount</button>
+
+	<button class="btn btn-dark mt-5" onmouseover="highlightButton()" onmouseout="resetButton()" onclick="showAlert(updatePrice())">Ticket Price</button>
+     <p id="message" class="mt-5 fw-bold">Fare: PHP 0.00</p>
+
+  <br>
+  
+	</form>
+	</details>
+	</div>
+
+	<div class="container mt-5">
+		<hr>
+		<h1>Train System</h1>
+		<hr>
+
+		<div class="form-container">
+			<label for="fromStation">Origin</label>
+			<select class="form-select" id="fromStation">
+				<option value="0">Choose Station</option>
+				<option value="1">North Ave</option>
+				<option value="2">Quezon Ave</option>
+				<option value="3">Kamunig</option>
+				<option value="4">Cubao</option>
+				<option value="5">Santolan</option>
+				<option value="6">Ortigas</option>
+				<option value="7">Shaw</option>
+				<option value="8">Boni</option>
+				<option value="9">Guadalupe</option>
+				<option value="10">Buendia</option>
+				<option value="11">Ayala</option>
+				<option value="12">Magallanes</option>
+				<option value="13">Taft Ave</option>
+			</select>
+
+			<label class="mt-5" for="toStation">Destination</label>
+			<select class="form-select" id="toStation">
+				<option value="0">Choose Station</option>
+				<option value="1">North Ave</option>
+				<option value="2">Quezon Ave</option>
+				<option value="3">Kamunig</option>
+				<option value="4">Cubao</option>
+				<option value="5">Santolan</option>
+				<option value="6">Ortigas</option>
+				<option value="7">Shaw</option>
+				<option value="8">Boni</option>
+				<option value="9">Guadalupe</option>
+				<option value="10">Buendia</option>
+				<option value="11">Ayala</option>
+				<option value="12">Magallanes</option>
+				<option value="13">Taft Ave</option>
+			</select>
+
+			<label for="discountCode" class="mt-5">Discount Code</label>
+			<input class="form-control" type="text" id="discountCode" placeholder="Enter (KWASANT), which is only exclusive to first-time passengers">
+
+			<button class="btn btn-dark mt-5" onclick="calculateFare()">Total Price</button>
+
+			<h4 class="mt-5" id="fareDisplay">Fare: PHP 0.00</h4>
+	</div>
+
+</div>
+
+	
+
+	<script type="text/javascript">
+		
+		// I inferred that (1) pertains to each destination, and im not sure whether the pricing is right since i asked my mom for help in knowing how much it costs if min is 13.
+
+		const fareMatrix = [
+
+		[0,13,13,13,15,15,15,15,28,28,28,28,28], // 1
+		[13,0,13,13,15,15,15,15,28,28,28,28,28], // 2
+		[13,13,0,13,15,15,15,15,28,28,28,28,28], // 3
+		[13,13,13,0,15,15,15,15,28,28,28,28,28], // 4
+		[13,13,13,13,0,15,15,15,28,28,28,28,28], // 5
+		[13,13,13,13,15,0,15,15,28,28,28,28,28], // 6
+		[13,13,13,13,15,15,0,15,28,28,28,28,28], // 7
+		[13,13,13,13,15,15,15,0,28,28,28,28,28], // 8
+		[13,13,13,13,15,15,15,15,0,28,28,28,28], // 9
+		[13,13,13,13,15,15,15,15,28,0,28,28,28], // 10
+		[13,13,13,13,15,15,15,15,28,28,0,28,28], // 11
+		[13,13,13,13,15,15,15,15,28,28,28,0,28], // 12
+		[28,28,28,28,28,15,15,15,15,13,13,13,0] // 13
+	];
+
+
+	function calculateFare() {
+
+		const fromStation = document.getElementById('fromStation').value;
+		const toStation = document.getElementById('toStation').value;
+
+		const discountCode = document.getElementById('discountCode').value;
+
+		const fromIndex = parseInt(fromStation) - 1;
+		const toIndex = parseInt(toStation) - 1;
+
+		// For my sources, i used w3schools, YT, and ai for this particular code (i am terribly sorry but this is my first time using it on an actual assesment- project pa nga omd.)
+
+		// https://www.youtube.com/watch?v=f5ZswIE_SgY
+		// https://www.youtube.com/watch?v=Nw1aLm4gBmI
+		// https://www.w3schools.com/cssref/func_matrix.php
+
+		if (fromIndex >= 0 && toIndex >= 0 && fromIndex !== toIndex) {
+
+			const fare = fareMatrix[fromIndex][toIndex];
+
+			let discount = 0;
+			if (discountCode === "KWASANT") {
+				discount = 0.1;
+			}
+
+			let finalFare = fare - (fare * discount);
+			finalFare = finalFare.toFixed(2);
+
+			document.getElementById('fareDisplay').innerText = `Fare: ₱${finalFare}`;
+
+			const fromStationName = document.getElementById('fromStation').options[fromIndex +1].text;
+			const toStationName = document.getElementById('toStation').options[toIndex +1].text;
+		} else {
+			alert("Please take this seriously.")
+		}
+	}
+	</script>
+
+		
+	<!-- FEEDBACK -->
+	<div class="container1 mt-5" id="Feedback">
+		<hr>
+		<center>
+		<h3>Feedback</h3>
+		</center>
+		<hr>
+		<form>
+			<h6><em>Des commentaires? (Any comments?)</em></h6>
+			<div class="col-auto">
+				<textarea class="form-control" rows="5" cols="130" placeholder="We value your insights, leave them here!"></textarea>
+			</div>
+			<!-- NAME -->
+			<div class="name mt-3">
+				<label for="inputText">Name:</label>
+				<input type="text" class="form-control" id="name">
+			</div>
+			<!-- Email -->
+			<div class="email mt-3">
+				<label for="inputText">Email:</label>
+				<input type="text" class="form-control" id="email">
+			</div>
+			<br>
+			<button type="Submit" class="btn btn-dark">Submit</button>
+			<br>
+		</form>
+	</div>
+
+
+	<!-- HELP -->
+	<div class="container2 mt-5" id="help">
+		<hr>
+		<h3>Help</h3>
+		<hr>
+		<h6>For any assistance, feel free to contact us.</h6>
+		<br>
+		<h6>Our Office: 28 East, Serenity Skies #14 <br>
+			Estaban Krusty Krab Street, Brgy. Hatdog <br>
+			Heights, Makati City, Philippines
+		</h6>
+		<br>
+	</div>
+
+
+     <!-- Footer -->
+  <center>
+  	<footer class="mt-5 text-secondary"><b><a href="https://frangun.github.io/2Q-EX2_Dela-Cruz-F./">© 2024 Franzeska Dela Cruz | 9-E ♡</a><br>
+  	<a href="https://azaragoza-9e.github.io/Q2_index--Profile_Zaragoza_Annika.html/" target="_blank"> © Annika Colleen Zaragoza | 9-E ♡ </a>
+  </footer>
+  </center>
+
+  <br>	
+
+
+
+</body>
